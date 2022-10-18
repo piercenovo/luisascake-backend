@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken')
+const config = require('../config')
 
 const validateToken = (req, res, next) => {
   const token = req.header('xxx-token')
@@ -12,7 +13,7 @@ const validateToken = (req, res, next) => {
 
   try {
     // -----------------------------------Add key Jwt TOKEN
-    const { uidPerson } = jwt.verify(token, process.env.KEY_JWTOKEN)
+    const { uidPerson } = jwt.verify(token, config.jwt)
 
     req.uidPerson = uidPerson
 

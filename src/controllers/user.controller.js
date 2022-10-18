@@ -61,7 +61,7 @@ const changeFotoProfile = async (req = request, res = response) => {
     const rows = await conn.query('SELECT image FROM person WHERE pe_id = ?', [req.uidPerson])
 
     if (rows[0][0].image != null) {
-      await fs.unlink(path.resolve('src/uploads/profile/' + rows[0][0].image))
+      await fs.unlink(path.resolve('src/public/uploads/profile/' + rows[0][0].image))
     }
 
     await conn.query('UPDATE person SET image = ? WHERE pe_id = ?', [req.file.filename, req.uidPerson])

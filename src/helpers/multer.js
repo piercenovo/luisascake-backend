@@ -3,7 +3,7 @@ const path = require('path')
 
 const storage = multer.diskStorage({
   destination: (req, res, cb) => {
-    cb(null, 'src/uploads/profile')
+    cb(null, 'src/public/uploads/profile')
   },
   filename: (req, file, cb) => {
     cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
 
 const storageProduct = multer.diskStorage({
   destination: (req, res, cb) => {
-    cb(null, 'src/uploads/products')
+    cb(null, 'src/public/uploads/products')
   },
   filename: (req, file, cb) => {
     cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
@@ -21,7 +21,7 @@ const storageProduct = multer.diskStorage({
 
 const storageCategory = multer.diskStorage({
   destination: (req, res, cb) => {
-    cb(null, 'src/uploads/categories')
+    cb(null, 'src/public/uploads/categories')
   },
   filename: (req, file, cb) => {
     cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))

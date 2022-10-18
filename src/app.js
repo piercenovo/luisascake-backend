@@ -19,10 +19,11 @@ app.use('/api', require('./routes/auth.routes'))
 app.use('/api', require('./routes/products.routes'))
 app.use('/api', require('./routes/categories.routes'))
 
-// This folder will be Public
-app.use(express.static(path.join(__dirname, 'uploads/profile')))
-app.use(express.static(path.join(__dirname, 'uploads/home')))
-app.use(express.static(path.join(__dirname, 'uploads/products')))
-app.use(express.static(path.join(__dirname, 'uploads/categories')))
+// Public Directory
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public/uploads/profile')))
+app.use(express.static(path.join(__dirname, 'public/uploads/home')))
+app.use(express.static(path.join(__dirname, 'public/uploads/products')))
+app.use(express.static(path.join(__dirname, 'public/uploads/categories')))
 
 module.exports = app

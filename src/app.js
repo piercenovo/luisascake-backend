@@ -3,17 +3,17 @@ import morgan from 'morgan'
 import cors from 'cors'
 import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
-import { notFound, handleError } from './middlewares/index.js'
+import { notFound, handleError } from './api/middlewares/index.js'
 
-import authRouter from './routes/auth.routes.js'
-import usersRouter from './routes/user.routes.js'
-import productsRouter from './routes/products.routes.js'
-import categoriesRouter from './routes/categories.routes.js'
+import authRouter from './api/routes/auth.routes.js'
+import usersRouter from './api/routes/user.routes.js'
+import productsRouter from './api/routes/products.routes.js'
+import categoriesRouter from './api/routes/categories.routes.js'
 
 // Initialization
 const app = express()
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const indexRouter = (req, res) => res.json({ message: "Welcome to API Luisa's Cake" })
+const indexRouter = (req, res) => res.json({ message: "Bienvenido a la API de Luisa's Cake" })
 
 // Middlewares
 app.use(morgan('dev'))
